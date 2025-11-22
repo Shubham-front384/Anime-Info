@@ -41,14 +41,14 @@ const Cards = () => {
       <div className="cards flex flex-wrap items-start justify-evenly gap-y-5 py-8">
         {urlData.map((ele, index) => {
           return (
-            <div className="card w-72 h-[400px] relative cursor-pointer" key={ index } onClick={() => navigate(`/anime/${ele.mal_id}`)}>
+            <div className="card w-45 md:w-72 md:h-[400px] relative cursor-pointer" key={ index } onClick={() => navigate(`/anime/${ele.mal_id}`)}>
               <img
                 src={ele.images.jpg.image_url}
                 alt="anime-img"
-                className="card-img w-full h-[350px]"
+                className="card-img w-full h-[210px] md:h-[350px]"
               />
               <div className="rating-count-list">
-                <div className="rating-count px-4 py-2.5 flex flex-col gap-2 w-max bg-white/10 border border-white/20 backdrop-blur-md shadow-lg shadow-black/30 backdrop-saturate-150 absolute bottom-20">
+                <div className="rating-count px-4 py-2.5 flex-col gap-2 w-max bg-white/10 border border-white/20 backdrop-blur-md shadow-lg shadow-black/30 backdrop-saturate-150 absolute bottom-20 hidden md:flex">
                   <div className="rating flex items-center justify-between gap-2 text-black">
                     <h5 className="rating-heading">{ ele.score || "N/A" }</h5>
                     <i className="ri-star-line"></i>
@@ -63,7 +63,7 @@ const Cards = () => {
                 </div>
               </div>
 
-              <div className="card-info">
+              <div className="card-info pt-2">
                 <h5 className="card-name capitalize text-lg font-semibold break-words line-clamp-2">{ ele.title }</h5>
               </div>
             </div>

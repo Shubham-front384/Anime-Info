@@ -10,7 +10,7 @@ const Pagination = ({ page }) => {
   return (
     <>
       <div className="pagination pb-8 flex items-center justify-center flex-wrap">
-        <div className="selected flex gap-4 text-xl">
+        <div className="selected flex gap-4 text-xl justify-center flex-wrap px-4">
 
           <button
             onClick={() => page > 1 && navigate(`/${page - 1}`)}
