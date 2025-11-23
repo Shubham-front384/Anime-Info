@@ -4,11 +4,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import 'remixicon/fonts/remixicon.css';
 
 import Pagination from '../Pagination/Pagination';
+import Cardsearch from './Cardsearch';
 
 const Cards = () => {
   const [urlData, setUrlData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isNull, setIsNull] = useState(null);
+  const [textValue, setTextValue] = useState();
 
   const navigate = useNavigate();
   const { pageNumber } = useParams();
@@ -36,10 +38,15 @@ const Cards = () => {
   if (isNull) return <h5>Error</h5>;
   if (loading) return <h5>Loading Anime...</h5>;
 
+  const filteredData = urlData.filter((anime) =>
+    anime.title.toLowerCase().includes((textValue || "").toLowerCase())
+  );
+
   return (
     <>
-      <div className="cards flex flex-wrap items-start justify-evenly gap-y-5 py-8">
-        {urlData.map((ele, index) => {
+      <Cardsearch setTextValue={ setTextValue } />
+      <div className="cards flex flex-wrap items-start justify-evenly gap-y-5 pb-8">
+        {filteredData.map((ele, index) => {
           return (
             <div className="card w-45 md:w-72 md:h-[400px] relative cursor-pointer" key={ index } onClick={() => navigate(`/anime/${ele.mal_id}`)}>
               <img
