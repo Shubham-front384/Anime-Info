@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Detailleft = ({ details }) => {
-  console.log(details);
   return (
     <>
       <div className="main-detail-left py-2 px-4 w-full flex flex-col gap-4 border-2 md:w-1/3">
@@ -46,8 +45,8 @@ const Detailleft = ({ details }) => {
                 producers:
                 {
                   details.producers.map((p, index) => (
-                    <span key={index} className='text-blue-700 ml-1'>
-                      {p.name}{index < details.producers.length - 1 ? ", " : ""}
+                    <span key={ index } className='text-blue-700 ml-1'>
+                      { p.name }{ index < details.producers.length - 1 ? ", " : "" }
                     </span>
                   ))
                 }
@@ -56,8 +55,8 @@ const Detailleft = ({ details }) => {
                 licensors: 
                 {
                   details.licensors.map((p, index) => (
-                    <span key={index} className='text-blue-700 ml-1'>
-                      {p.name}{index < details.licensors.length - 1 ? ", " : ""}
+                    <span key={ index } className='text-blue-700 ml-1'>
+                      { p.name }{ index < details.licensors.length - 1 ? ", " : "" }
                     </span>
                   ))
                 }
@@ -66,8 +65,8 @@ const Detailleft = ({ details }) => {
                 studios: 
                 {
                   details.studios.map((p, index) => (
-                    <span key={index} className='text-blue-700 ml-1'>
-                      {p.name}{index < details.studios.length - 1 ? ", " : ""}
+                    <span key={ index } className='text-blue-700 ml-1'>
+                      { p.name }{ index < details.studios.length - 1 ? ", " : "" }
                     </span>
                   ))
                 }
@@ -79,8 +78,8 @@ const Detailleft = ({ details }) => {
                 genres: 
                 {
                   details.genres.map((p, index) => (
-                    <span key={index} className='text-blue-700 ml-1'>
-                      {p.name}{index < details.genres.length - 1 ? ", " : ""}
+                    <span key={ index } className='text-blue-700 ml-1'>
+                      { p.name }{ index < details.genres.length - 1 ? ", " : "" }
                     </span>
                   ))
                 }
@@ -89,8 +88,8 @@ const Detailleft = ({ details }) => {
                 themes: 
                 {
                   details.themes.map((p, index) => (
-                    <span key={index} className='text-blue-700 ml-1'>
-                      {p.name}{index < details.themes.length - 1 ? ", " : ""}
+                    <span key={ index } className='text-blue-700 ml-1'>
+                      { p.name }{ index < details.themes.length - 1 ? ", " : "" }
                     </span>
                   ))
                 }
